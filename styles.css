@@ -1,0 +1,201 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    background: linear-gradient(to right, #18535f,#20869c);
+}
+header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: 1px 2px 6px rgba(255,255,255,.1);
+    background-color: rgb(202, 201, 201);
+}
+.logo h3{
+    color: #18535f;
+    font-size: 24px;
+}
+li{
+    list-style-type: none;
+    display: inline;
+    margin-right: 25px; 
+}
+a{
+    color: #18535f;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+}
+nav a::after{
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: #18535f;
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    transition: all .2s ease;
+}
+nav a:hover::after{
+    width: 100%;
+}
+
+button{
+    background-color: #4d8c99;
+    padding: 8px 20px;
+    border-radius: 4px;
+    transition: all .35s ease;
+    cursor: pointer;
+    color: white;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+}
+button:hover{
+    transform: translate(5px, 12px);
+}
+
+.container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 500px 600px;
+    align-items: center;
+    /* border: 2px solid red; */
+    justify-content: center;  
+    background: linear-gradient(to right, #18535f,#20869c);
+   
+}
+.container h1{
+    font-size: 42px;
+    text-transform: capitalize;
+    color: rgb(212, 209, 209);
+}
+span{
+    font-size: 50px;
+}
+h4{
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: rgb(212, 209, 209);
+}
+p{
+    text-transform: capitalize;
+    font-size: 16px;
+    color: rgb(212, 209, 209);
+    margin: 12px 0;
+}
+.footer-container{
+    text-align: center;
+    width: 100%;
+    padding: 12px 0;
+    background-color: rgb(202, 201, 201);
+}
+.social-icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+.footer-container p{
+    color: #18535f;
+    font-size: 16px;
+}
+/* animations */
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1}
+}
+@keyframes slideIn{
+    from{transform: translateX(-100%);}
+    to{transform: translateX(0);}
+}
+@keyframes slideInTop{
+    from{transform: translateY(-100%);}
+    to{transform: translateY(0);}
+}
+@keyframes scaleup{
+    from{transform: scale(0.8px);}
+    to{transform: scale(1);}
+}
+/* responsiveness */
+@media(max-width:600px){
+    header{
+        flex-direction: column;
+    }
+    li{
+        display: block;
+        margin: 12px 0;
+        animation: fadeIn 2s ease-in-out;
+    }
+    .container{
+        grid-template-columns: 1fr;
+        text-align: center;
+        animation: slideIn 1s ease-in-out;
+    }
+    .container h1{
+        font-size: 36px;
+    }
+    .text-content{
+        padding: 50px;
+        animation: fadeIn 3s ease-in-out;
+    }
+   
+}
+@media (max-width:1024px){
+    header{
+        justify-content: space-evenly;
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+    .logo h3{
+        font-size: 18px;
+        animation: fadeIn 2s ease-in-out;
+    }
+    li{
+        animation: fadeIn 3s ease-in-out;
+
+    }
+    header{
+        animation: slideInTop 1s ease-in-out;
+    }
+    .container{
+        grid-template-columns: 1fr;
+        text-align: center;
+        animation: fadeIn 2s ease-in-out;
+    }
+    .text-content{
+        padding: 50px;
+        animation: fadeIn 3s ease-in-out;
+    }   
+    .container-image img{
+        animation: slideIn 2s ease-in-out;
+    }
+}
+@media(min-width:1025){
+    .container{
+        grid-template-columns: 500px 600px;
+        animation: fadeIn 2s ease-in-out;
+    }
+    header{
+        animation: fadeIn 1s ease-in-out;
+    }
+    li{
+        animation: slideInTop 2s ease-in-out;
+    }
+    .text-content{
+        animation: slideIn 3s ease-in-out;
+    }
+    .container-image img{
+        animation: fadeIn 4s ease-in-out ;
+    }
+}
